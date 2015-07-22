@@ -1,0 +1,44 @@
+{
+  "name": "angular-harmonized",
+  "version": "0.5.0",
+  "main": "./angular-harmonized.js",
+  "authors": [
+    "Simon Jentsch <sjentsch@hyphe.me>"
+  ],
+  "description": "Module for AngularJS to integrate harmonized.js",
+  "keywords": [
+    "angular",
+    "AngularJS",
+    "model",
+    "REST",
+    "IndexedDB",
+    "harmonized.js"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "pages",
+    "css",
+    "src",
+    "config",
+    "Gruntfile.js",
+    "app.js",
+    "index.html",
+    "karma.conf.js",
+    "npm-debug.log",
+    "package.json"
+  ],
+  "dependencies": {
+    "angular": "~1.4",
+    "harmonized.js": "git@bitbucket.org:hyphe/web-harmonized.js.git#0.5.1"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.4",
+    "angular-scenario": "~1.4",
+    "angular-route": "~1.4",
+    "bootstrap": "~3.0"
+  }
+}

@@ -1,0 +1,15 @@
+<form>
+  <td>
+    {{entry.vorname}}
+  </td>
+  <td>
+    {{entry.nachname}}
+  </td>
+  <td>
+    {{entry.beruf}}
+  </td>
+  <td>
+    <button ng-click="editEntry(entry)" class="btn btn-default">edit</button>
+    <button ng-click="deleteEntry(entry)" class="btn btn-default">delete</button>
+  </td>
+</form>

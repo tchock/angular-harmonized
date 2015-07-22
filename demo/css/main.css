@@ -1,0 +1,13 @@
+body {
+  margin: 100px;
+}
+
+#edit-form {
+  margin-top: 3em;
+  padding-top: 3em;
+  border-top: 5px solid #313131;
+}
+
+.form-group label {
+  display: none;
+}

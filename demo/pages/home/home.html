@@ -1,0 +1,104 @@
+<div ng-controller="homeCtrl">
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th>Vorname</th>
+        <th>Nachname</th>
+        <th>Beruf</th>
+        <th>_id</th>
+        <th>id</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="entry in data | orderBy:'nachname'">
+        <td>
+          {{entry.firstname}}
+        </td>
+        <td>
+          {{entry.lastname}}
+        </td>
+        <td>
+          {{entry.job}}
+        </td>
+        <td>
+          {{entry._meta.storeId}}
+        </td>
+        <td>
+          {{entry._meta.serverId}}
+        </td>
+        <td>
+          <button ng-click="editEntry(entry)" class="btn btn-default">edit</button>
+          <button ng-click="deleteEntry(entry)" class="btn btn-default">delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button ng-click="editEntry()" class="btn btn-default">Neuen Eintrag</button>
+
+  <form role="form" id="edit-form">
+    <div class="form-group">
+      <label for="vorname">Vorname</label>
+      <input class="form-control" id="vorname" placeholder="Vorname" ng-model="activlyEdited.firstname">
+    </div>
+
+    <div class="form-group">
+      <label for="nachname">Nachname</label>
+      <!--
+      <select class="form-control" id="nachname" ng-model="activlyEdited.nachname" size="5" multiple="">
+        <option>Heino</option>
+        <option>Michael Jackson</option>
+        <option>Tom Waits</option>
+        <option>Nina Hagen</option>
+        <option>Marianne Rosenberg</option>
+      </select>
+
+    -->
+      <input class="form-control" id="nachname" placeholder="Nachname" ng-model="activlyEdited.lastname">
+    </div>
+
+    <div class="form-group">
+      <label for="beruf">Beruf</label>
+      <input class="form-control" id="beruf" placeholder="Beruf" ng-model="activlyEdited.job">
+    </div>
+
+    <button class="btn btn-default" ng-click="saveCurrentEntry()" >Save</button>
+
+  </form>
+
+  <h2>Gangsta Namen</h2>
+
+  <table class="table table-bordered table-hover table-striped">
+    <thead>
+      <tr>
+        <th>Vorname</th>
+        <th>Nachname</th>
+        <th>Beruf</th>
+        <th>_id</th>
+        <th>id</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="entry in gangstaData | orderBy:'nachname'">
+        <td>
+          {{entry.firstname}}
+        </td>
+        <td>
+          {{entry.lastname}}
+        </td>
+        <td>
+          {{entry.job}}
+        </td>
+        <td>
+          {{entry._meta.storeId}}
+        </td>
+        <td>
+          {{entry._meta.serverId}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>
