@@ -69,7 +69,7 @@ angular.module('angular-harmonized', []).provider('harmonized', function() {
 
           // Transform the http options
           if (_.isFunction(httpOptionsTransform)) {
-            httpOptions = httpTransform();
+            httpOptions = httpOptionsTransform();
           };
 
           $http(httpOptions).success(function(data, status, header) {
