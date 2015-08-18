@@ -33,7 +33,8 @@ config(['$routeProvider', '$locationProvider', '$compileProvider', function($rou
 		dbName: 'testDb',
 		baseUrl: 'http://localhost:2403',
 		sendLastModified: false,
-		fetchAtStart: true
+		fetchAtStart: true,
+		saveLocally: false
 	});
 
 	harmonizedProvider.setModelSchema({

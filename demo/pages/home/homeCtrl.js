@@ -10,7 +10,9 @@ angular.module('myApp').controller("homeCtrl", function($scope, harmonized){
   }
 
   harmonized.build();
+
   $scope.data = harmonized.createViewModel('people');
+
   $scope.gangstaData = harmonized.createViewModel('people', function(item) {
     var newItem = _.clone(item);
     newItem.firstname = makeItGangsta(item.firstname);
