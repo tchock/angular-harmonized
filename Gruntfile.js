@@ -8,7 +8,6 @@
 
 */
 
-var Dgeni = require('dgeni');
 
 'use strict';
 
@@ -18,13 +17,12 @@ module.exports = function(grunt) {
 	Load grunt plugins
 	@toc 2.
 	*/
-  grunt.loadNpmTasks('grunt-contrib-concat');
+grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-conventional-changelog');
   grunt.loadNpmTasks('grunt-bump');
   grunt.loadNpmTasks("grunt-jscs");
-  grunt.loadNpmTasks('grunt-complexity');
 
   /**
 	Function that wraps everything to allow dynamically setting/changing grunt options and config later by grunt task. This init function is called once immediately (for using the default grunt options, config, and setup) and then may be called again AFTER updating grunt (command line) options.
@@ -37,21 +35,6 @@ module.exports = function(grunt) {
 		@toc 5.
 		*/
     grunt.initConfig({
-      complexity: {
-        generic: {
-          src: ['src/harmonized.js'],
-          exclude: [],
-          options: {
-            breakOnErrors: true,
-            errorsOnly: false, // show only maintainability errors
-            cyclomatic: [3, 7, 12], // or optionally a single value, like 3
-            halstead: [8, 13, 20], // or optionally a single value, like 8
-            maintainability: 100,
-            hideComplexFunctions: false, // only display maintainability
-            broadcast: false // broadcast data over event-bus
-          }
-        }
-      },
       jscs: {
         src: 'src/*.js',
         options: {
@@ -86,7 +69,7 @@ module.exports = function(grunt) {
       concat: {
         build: {
           src: ['src/*.js'],
-          dest: 'harmonized.js'
+          dest: 'angular-harmonized.js'
         }
       },
       jshint: {
@@ -135,8 +118,8 @@ module.exports = function(grunt) {
         },
         build: {
           files: {},
-          src: 'harmonized.js',
-          dest: 'harmonized.min.js'
+          src: 'angular-harmonized.js',
+          dest: 'angular-harmonized.min.js'
         }
       }
       /*,
@@ -166,11 +149,6 @@ module.exports = function(grunt) {
         'changelog',
         'bump-commit'
       ]);
-    });
-    grunt.registerTask('docs', 'Generate docs via dgeni.', function() {
-      var done = this.async();
-      var dgeni = new Dgeni([require('./config/dgeni')]);
-      dgeni.generate().then(done);
     });
   }
   init({}); //initialize here for defaults (init may be called again later within a task)
