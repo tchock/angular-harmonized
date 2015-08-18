@@ -69,8 +69,8 @@ angular.module('angular-harmonized', []).provider('harmonized', function() {
 
           // Transform the http options
           if (_.isFunction(httpOptionsTransform)) {
-            httpOptions = httpOptionsTransform();
-          };
+            httpOptions = httpOptionsTransform(httpOptions);
+          }
 
           $http(httpOptions).success(function(data, status, header) {
             deferred.resolve({
