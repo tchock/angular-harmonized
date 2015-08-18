@@ -62,13 +62,17 @@ angular.module('angular-harmonized', []).provider('harmonized', function() {
 
 
     var service = {
-      build: function() {
+      build: function(httpOptionsTransform) {
         // http function
         var httpFn = function(httpOptions) {
           var deferred = $q.defer();
+
+          // Transform the http options
+          if (_.isFunction(httpOptionsTransform)) {
+            httpOptions = httpTransform();
+          };
+
           $http(httpOptions).success(function(data, status, header) {
-            console.log('wwhoooo');
-            console.log(data);
             deferred.resolve({
               data: data,
               status: status,
@@ -81,8 +85,6 @@ angular.module('angular-harmonized', []).provider('harmonized', function() {
               status: status,
               header: header
             };
-            console.log('whiiii');
-            console.log(error);
             deferred.reject(error);
           });
 
