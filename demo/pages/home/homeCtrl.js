@@ -47,7 +47,15 @@ angular.module('myApp').controller("homeCtrl", function($scope, harmonized){
 
 
   $scope.saveCurrentEntry = function () {
-    $scope.activlyEdited.save();
+    var savePromise = $scope.activlyEdited.save();
+    console.log(savePromise);
+    savePromise.then(function(item) {
+      console.log('promises work!');
+      console.log(JSON.stringify(item));
+    }).catch(function(error) {
+      console.log('error!');
+      console.log(error);
+    });
     $scope.activlyEdited = $scope.data.new();
   };
 

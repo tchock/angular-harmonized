@@ -63,6 +63,7 @@ angular.module('angular-harmonized', []).provider('harmonized', function() {
 
     var service = {
       build: function(httpOptionsTransform) {
+
         // http function
         var httpFn = function(httpOptions) {
           var deferred = $q.defer();
@@ -99,6 +100,7 @@ angular.module('angular-harmonized', []).provider('harmonized', function() {
         };
 
         harmonized.setup(httpFn, viewUpdateFn);
+        harmonized.setPromiseClass($q);
 
         harmonized.build();
       },
