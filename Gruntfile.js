@@ -55,8 +55,8 @@ grunt.loadNpmTasks('grunt-contrib-concat');
           updateConfigs: [],
           commit: true,
           commitMessage: 'Release %VERSION%',
-          commitFiles: ['package.json', 'bower.json', 'CHANGELOG.md',
-            'harmonized.js', 'harmonized.min.js'
+          commitFiles: ['package.json', 'bower.json', /*'CHANGELOG.md',*/
+            'angular-harmonized.js', 'angular-harmonized.min.js'
           ],
           createTag: true,
           tagName: '%VERSION%',
@@ -146,7 +146,7 @@ grunt.loadNpmTasks('grunt-contrib-concat');
       grunt.task.run([
         'default',
         'bump:' + (type || 'patch') + ':bump-only',
-        'changelog',
+        //'changelog',
         'bump-commit'
       ]);
     });
