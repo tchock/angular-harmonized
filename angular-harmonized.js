@@ -62,6 +62,8 @@ angular.module('angular-harmonized', []).provider('harmonized', function() {
 
 
     var service = {
+      setConfig: provider.setConfig,
+
       build: function(httpOptionsTransform) {
 
         // http function
