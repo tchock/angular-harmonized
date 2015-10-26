@@ -64,6 +64,10 @@ angular.module('angular-harmonized', []).provider('harmonized', function() {
     var service = {
       setConfig: provider.setConfig,
 
+      getErrorStream: function getErrorStream() {
+        return harmonized.errorStream;
+      },
+
       build: function(httpOptionsTransform) {
 
         // http function
