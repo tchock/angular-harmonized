@@ -84,7 +84,13 @@ angular.module('angular-harmonized', []).provider('harmonized', function() {
               status: status,
               header: header,
             });
-          }).catch(function(error) {
+          }).error(function(data, status, header) {
+            var error = new Error('HTTP error on fetch');
+            error.target = {
+              data: data,
+              status: status,
+              header: header,
+            };
             deferred.reject(error);
           });
 
