@@ -89,7 +89,8 @@ grunt.loadNpmTasks('grunt-contrib-concat');
             _: false,
             module: false,
             forge: false,
-            IDBKeyRange: false
+            IDBKeyRange: false,
+            harmonized: false,
           }
         },
         beforeconcat: {
