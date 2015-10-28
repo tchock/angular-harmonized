@@ -98,10 +98,8 @@ angular.module('angular-harmonized', []).provider('harmonized', function() {
         };
 
         // view update function
-        var viewUpdateFn = function() {
-          if (!$rootScope.$$phase) {
-            $rootScope.$digest();
-          }
+        var viewUpdateFn = function(callback) {
+          $rootScope.$evalAsync(callback);
         };
 
         harmonized.setup(httpFn, viewUpdateFn);

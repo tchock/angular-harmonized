@@ -58,7 +58,7 @@ angular.module('angular-harmonized', []).provider('harmonized', function() {
   };
 
   // method for instantiating
-  this.$get = function $get($rootScope, $http, $q) {
+  this.$get = function $get($rootScope, $http, $q, $timeout) {
 
     var service = {
       setConfig: provider.setConfig,
@@ -98,10 +98,8 @@ angular.module('angular-harmonized', []).provider('harmonized', function() {
         };
 
         // view update function
-        var viewUpdateFn = function() {
-          if (!$rootScope.$$phase) {
-            $rootScope.$digest();
-          }
+        var viewUpdateFn = function(callback) {
+          $rootScope.$evalAsync(callback);
         };
 
         harmonized.setup(httpFn, viewUpdateFn);
