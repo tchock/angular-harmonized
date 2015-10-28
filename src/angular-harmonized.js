@@ -110,6 +110,7 @@ angular.module('angular-harmonized', []).provider('harmonized', function() {
 
       destroy: harmonized.destroy,
       pushAll: harmonized.pushAll,
+      fetchAll: harmonized.getFromServer,
       setOnline: harmonized.setOnline,
       setOffline: harmonized.setOffline,
       createViewModel: harmonized.createViewModel,
