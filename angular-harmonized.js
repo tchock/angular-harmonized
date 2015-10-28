@@ -58,7 +58,7 @@ angular.module('angular-harmonized', []).provider('harmonized', function() {
   };
 
   // method for instantiating
-  this.$get = function $get($rootScope, $http, $q) {
+  this.$get = function $get($rootScope, $http, $q, $timeout) {
 
     var service = {
       setConfig: provider.setConfig,
