@@ -9,7 +9,7 @@ This is a AngularJS wrapper for harmonized.js.
 The installation of angular-harmonized is fairly simple. If you use Bower in your projects you simply have to install it with the following command:
 
 ````
-bower install git@bitbucket.org:hyphe/web-angular-harmonized.git
+bower install https://github.com/tchock/angular-harmonized.git
 ````
 
 Because this is a private repository, you have to create a ssh key and add it to bitbucket. On the bitbucket site there is a guide how to do that.
